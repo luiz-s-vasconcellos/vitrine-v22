@@ -2,6 +2,162 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [22.0.0](https://dev.azure.com/totvstfs/THF/_git/thf-components/compare/v21.30.1...v22.0.0)
+
+### ⚠ BREAKING CHANGES
+
+* **angular:** deve ser utilizado o Angular v22
+
+Atualize seu projeto para utilizar a versão 22 do Angular, acesse a documentação [Guia de Atualização do Angular](https://angular.dev/update-guide) para fazer a migração completa.
+
+* **grid:** remove o método `calculateHeightDynamically`
+
+O método estava depreciado desde a v21.x.x e foi removido. Utilize `calculateDynamicSize('height', callRowHeight)`, que também atende `minHeight` e `maxHeight`.
+
+Antes:
+
+```typescript
+this.thfGrid.calculateHeightDynamically(true);
+```
+
+Depois:
+
+```typescript
+this.thfGrid.calculateDynamicSize('height', true);
+```
+
+* **grid:** remove a literal `ThfGridLiterals.otherColumns`
+
+A literal estava depreciada e foi removida junto com a seção "Outras colunas" do Gerenciar Tabela. Não há propriedade substituta: remova a chave `otherColumns` do objeto informado em `t-literals`.
+
+Antes:
+
+```typescript
+literals: ThfGridLiterals = { manageColumns: 'Gerenciar colunas', otherColumns: 'Outras colunas' };
+```
+
+Depois:
+
+```typescript
+literals: ThfGridLiterals = { manageColumns: 'Gerenciar colunas' };
+```
+
+### Code Refactoring
+
+* **utils:** remove as funções internas depreciadas `getDefaultSize` e `validateSize`
+
+Ambas eram de uso interno da biblioteca (não expostas na API pública) e foram substituídas por `getDefaultSizeFn` e `validateSizeFn`, que leem o nível de acessibilidade diretamente do documento em vez de exigir uma instância de `PoThemeService`.
+
+### Features
+
+* **schematics:** adiciona a migração `migration-v22`
+
+Executada automaticamente por `ng update @totvs/thf-components@22`, a migração valida o pré-requisito do Angular 22, converte os usos de `calculateHeightDynamically` para `calculateDynamicSize('height', …)` nos arquivos `.ts` e `.html` e reporta, ao final, os casos que exigem revisão manual. As versões dos pacotes irmãos passam a ser resolvidas pelo `ng-update.packageGroup`, que agora também inclui `@totvs/themes` e `@totvs/po-theme`.
+
+
+### [21.30.1](https://dev.azure.com/totvstfs/THF/_git/thf-components/compare/v21.30.0...v21.30.1) (2026-09-01)
+
+Compatibilidade com @po-ui/ng-components@21.30.1
+
+## [21.30.0](https://dev.azure.com/totvstfs/THF/_git/thf-components/compare/v21.29.0...v21.30.0) (2026-08-24)
+
+
+### Features
+
+* **grid:** adiciona p-change-model no thf-grid-edit ([c430337](https://dev.azure.com/totvstfs/THF/_git/thf-components/commit/c430337407dbe1c2586ca237cb01cf0869044982))
+
+
+### Bug Fixes
+
+* **rich-text:** corrige alinhamento do header em diferentes navegadores ([3fa9c20](https://dev.azure.com/totvstfs/THF/_git/thf-components/commit/3fa9c2098e4eb39df555999be800d930e6543271))
+
+## [21.29.0](https://dev.azure.com/totvstfs/THF/_git/thf-components/compare/v21.28.0...v21.29.0) (2026-08-19)
+
+### ⚠ BREAKING CHANGES
+
+* **grid:** deprecia a propriedade `ThfThfGridColumn.filter` ([6baafa8](https://dev.azure.com/totvstfs/THF/_git/thf-components/commit/6baafa891bf616eae69a2ffe460577c0800041f4))
+
+A propriedade `filter` está depreciada e será removida na v23 da biblioteca.
+
+Utilize `ThfThfGridColumn.filterMenu`.
+
+### Features
+
+* **grid:** adiciona formatação numérica avançada via displayFormat ([0f422a7](https://dev.azure.com/totvstfs/THF/_git/thf-components/commit/0f422a7319ee8922d33f2467bed99938c915a763))
+* **grid:** implementa filtro em linha ([6baafa8](https://dev.azure.com/totvstfs/THF/_git/thf-components/commit/6baafa891bf616eae69a2ffe460577c0800041f4))
+
+
+### Bug Fixes
+
+* **grid:** corrige ícones ao habilitar/desabilitar sortable por coluna ([0db3558](https://dev.azure.com/totvstfs/THF/_git/thf-components/commit/0db3558c4fd34385034a42baf017eab8951e90f8))
+* **lookup:** corrige configuração de sortable por coluna ([889032c](https://dev.azure.com/totvstfs/THF/_git/thf-components/commit/889032cf991684d82507a957b9570ab877ea83e9))
+
+
+## [21.28.0](https://dev.azure.com/totvstfs/THF/_git/thf-components/compare/v21.27.0...v21.28.0) (2026-08-10)
+
+
+### Features
+
+* **themes:** implementa serviço de contraste ([0824706](https://dev.azure.com/totvstfs/THF/_git/thf-components/commit/0824706a46a9d6225d511266495566798e35707d))
+
+
+### Bug Fixes
+
+* **grid:** corrige responsividade do gerenciar visão ([2468c3c](https://dev.azure.com/totvstfs/THF/_git/thf-components/commit/2468c3cf80bff9cd271cd9446dc6692460028622))
+
+## [21.27.0](https://dev.azure.com/totvstfs/THF/_git/thf-components/compare/v21.26.0...v21.27.0) (2026-08-03)
+
+
+### Bug Fixes
+
+* **grid:** compatibiliza virtual-columns com gerenciador de visão ([1eeb339](https://dev.azure.com/totvstfs/THF/_git/thf-components/commit/1eeb339f4ecef035551abe306220133bf36626c9))
+
+### [21.26.0](https://dev.azure.com/totvstfs/THF/_git/thf-components/compare/v21.25.0...v21.26.0) (2026-07-30)
+
+Compatibilidade com @po-ui/ng-components@21.26.0
+
+## [21.25.0](https://dev.azure.com/totvstfs/THF/_git/thf-components/compare/v21.24.0...v21.25.0) (2026-07-24)
+
+
+### Features
+
+* **grid:** reposiciona helper do gerenciador à direita do label ([d5797a2](https://dev.azure.com/totvstfs/THF/_git/thf-components/commit/d5797a27612a2ffe3144922c008b44f28ef0dbb5))
+
+
+### Bug Fixes
+
+* **fix:** corrige extensão do postinstall script ([9f7095f](https://dev.azure.com/totvstfs/THF/_git/thf-components/commit/9f7095fd8fbc7b01de5146fc662537d1842ac459))
+
+
+## [21.24.0](https://dev.azure.com/totvstfs/THF/_git/thf-components/compare/v21.23.1...v21.24.0) (2026-07-21)
+
+
+### Features
+
+* **treelist:** implementa novas funcionalidades ([a6a2bc5](https://dev.azure.com/totvstfs/THF/_git/thf-components/commit/a6a2bc5159accfd90bf68e316684a0e7adda3f01))
+
+
+### Bug Fixes
+
+* **dependencies:** corrige vulnerabilidades high e critical ([3d2e0a4](https://dev.azure.com/totvstfs/THF/_git/thf-components/commit/3d2e0a46a9ab00b5961b849137686e2d69f5d61e))
+* **grid:** não mantém linha inválida no beforeInsert assíncrono ([d140776](https://dev.azure.com/totvstfs/THF/_git/thf-components/commit/d140776a0eb168661d629f09c97b2138ac2f6b03))
+
+
+### [21.23.1](https://dev.azure.com/totvstfs/THF/_git/thf-components/compare/v21.23.0...v21.23.1) (2026-07-14)
+
+
+### Bug Fixes
+
+* **grid:** ajusta estilo do input number do Gerenciar Visão ([d2f89a3](https://dev.azure.com/totvstfs/THF/_git/thf-components/commit/d2f89a3ec860e95b69105097c27118e8fb8e8326))
+
+## [21.23.0](https://dev.azure.com/totvstfs/THF/_git/thf-components/compare/v21.22.0...v21.23.0) (2026-07-06)
+
+
+### Features
+
+* **grid:** implementa novas funcionalidades no Gerenciar Visão ([f8c01b2](https://dev.azure.com/totvstfs/THF/_git/thf-components/commit/f8c01b23205c30032ecfa2babecc06b6d1cf95f8))
+* **grid:** implementa o uso do po-search-ai como filtro ([d4857bc](https://dev.azure.com/totvstfs/THF/_git/thf-components/commit/d4857bc6a4cc039e51192b4c025884b36497d3cd))
+
 ## [21.22.0](https://dev.azure.com/totvstfs/THF/_git/thf-components/compare/v21.21.0...v21.22.0) (2026-06-25)
 
 
