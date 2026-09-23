@@ -2,6 +2,7 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+
 ## [22.0.0](https://dev.azure.com/totvstfs/THF/_git/thf-components/compare/v21.30.1...v22.0.0)
 
 ### ⚠ BREAKING CHANGES
@@ -54,6 +55,25 @@ Ambas eram de uso interno da biblioteca (não expostas na API pública) e foram 
 
 Executada automaticamente por `ng update @totvs/thf-components@22`, a migração valida o pré-requisito do Angular 22, converte os usos de `calculateHeightDynamically` para `calculateDynamicSize('height', …)` nos arquivos `.ts` e `.html` e reporta, ao final, os casos que exigem revisão manual. As versões dos pacotes irmãos passam a ser resolvidas pelo `ng-update.packageGroup`, que agora também inclui `@totvs/themes` e `@totvs/po-theme`.
 
+## [21.31.0](https://dev.azure.com/totvstfs/THF/_git/thf-components/compare/v21.30.1...v21.31.0) (2026-09-15)
+
+
+### Features
+
+* **components:** aprimora contador de registros ([af620a3](https://dev.azure.com/totvstfs/THF/_git/thf-components/commit/af620a3d47a58ee4ab0ba53790f36afa08c28438))
+* **draggable-container:** novo componente ([6dfb9b6](https://dev.azure.com/totvstfs/THF/_git/thf-components/commit/6dfb9b630f73b1298eeb9f26c5aba2642ea555b9))
+* **grid:** ajusta `auto-height` do multiselect na grid de edição ([4a5cc4a](https://dev.azure.com/totvstfs/THF/_git/thf-components/commit/4a5cc4aeefd1f5cdd2f93bc9446e5b5192cf3b93))
+* **grid:** habilita `fieldValue` e `fieldLabel` para select no `filterRow` ([7324fed](https://dev.azure.com/totvstfs/THF/_git/thf-components/commit/7324fed1bdd46698f8b20edff38e283c2fc6a073))
+* **grid:** implementa multiselect no filterRow ([63a8618](https://dev.azure.com/totvstfs/THF/_git/thf-components/commit/63a8618d8c058af413a80739a24e4e4933a35c40))
+* **grid:** implementa novas funcionalidades filtro em linha ([f68e2a3](https://dev.azure.com/totvstfs/THF/_git/thf-components/commit/f68e2a3db79dbf1ba47bd34648e8760a30bc0cd5))
+
+
+### Bug Fixes
+
+* **grid:** corrige a emissão de evento dos opertadores customizaveis ([dbc9b37](https://dev.azure.com/totvstfs/THF/_git/thf-components/commit/dbc9b37de9afdd806d2712cfda0d8e9cd6772300))
+* **grid:** corrige a exibição de `booleanTrue` e `booleanFalse` ([dca15a0](https://dev.azure.com/totvstfs/THF/_git/thf-components/commit/dca15a0adf54ec896abcdcefad0eb2208b5efb22))
+* **grid:** corrige comportamento do Space em filterRow ([e6487a1](https://dev.azure.com/totvstfs/THF/_git/thf-components/commit/e6487a1c9e911e7974c2a7d2691d1c12a2c0238c))
+* **grid:** filterrow corrige seleção de itens com virtual scroll ([4ff67b3](https://dev.azure.com/totvstfs/THF/_git/thf-components/commit/4ff67b3fc739b06c8c1382e034129a175f8ad66f))
 
 ### [21.30.1](https://dev.azure.com/totvstfs/THF/_git/thf-components/compare/v21.30.0...v21.30.1) (2026-09-01)
 
