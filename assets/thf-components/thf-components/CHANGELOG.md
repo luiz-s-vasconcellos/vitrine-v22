@@ -54,6 +54,13 @@ Ambas eram de uso interno da biblioteca (não expostas na API pública) e foram 
 
 Executada automaticamente por `ng update @totvs/thf-components@22`, a migração valida o pré-requisito do Angular 22, converte os usos de `calculateHeightDynamically` para `calculateDynamicSize('height', …)` nos arquivos `.ts` e `.html` e reporta, ao final, os casos que exigem revisão manual. As versões dos pacotes irmãos passam a ser resolvidas pelo `ng-update.packageGroup`, que agora também inclui `@totvs/themes` e `@totvs/po-theme`.
 
+## [21.33.0](https://dev.azure.com/totvstfs/THF/_git/thf-components/compare/v21.32.0...v21.33.0) (2026-10-05)
+
+
+### Features
+
+* **list-view:** implementa animaliaDS ([1a6d2f6](https://dev.azure.com/totvstfs/THF/_git/thf-components/commit/1a6d2f6f3048862bfe94ec0f18a5efb6416a544c))
+* **tree-view:** implementa animaliaDS ([6a398a0](https://dev.azure.com/totvstfs/THF/_git/thf-components/commit/6a398a05be10d7d4a6b576f9eb700bb1dcc1fb7d))
 
 ## [21.32.0](https://dev.azure.com/totvstfs/THF/_git/thf-components/compare/v21.31.0...v21.32.0) (2026-09-29)
 
