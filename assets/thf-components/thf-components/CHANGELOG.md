@@ -2,7 +2,6 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-
 ## [22.0.0](https://dev.azure.com/totvstfs/THF/_git/thf-components/compare/v21.30.1...v22.0.0)
 
 ### ⚠ BREAKING CHANGES
@@ -54,6 +53,25 @@ Ambas eram de uso interno da biblioteca (não expostas na API pública) e foram 
 * **schematics:** adiciona a migração `migration-v22`
 
 Executada automaticamente por `ng update @totvs/thf-components@22`, a migração valida o pré-requisito do Angular 22, converte os usos de `calculateHeightDynamically` para `calculateDynamicSize('height', …)` nos arquivos `.ts` e `.html` e reporta, ao final, os casos que exigem revisão manual. As versões dos pacotes irmãos passam a ser resolvidas pelo `ng-update.packageGroup`, que agora também inclui `@totvs/themes` e `@totvs/po-theme`.
+
+
+## [21.32.0](https://dev.azure.com/totvstfs/THF/_git/thf-components/compare/v21.31.0...v21.32.0) (2026-09-29)
+
+
+### Features
+
+* **components:** oculta warning em devMode ([52e92da](https://dev.azure.com/totvstfs/THF/_git/thf-components/commit/52e92da6cff59aaa01876b8ccd206001260bc5f0))
+* **grid:** agrupa emissão de evento no filterRow ([6711a24](https://dev.azure.com/totvstfs/THF/_git/thf-components/commit/6711a24a5e058158cc64e57f4ecb5601dfa638ca))
+* **grid:** altera literals `booleanAll` e `selectAll` ([004911d](https://dev.azure.com/totvstfs/THF/_git/thf-components/commit/004911d95fba1963752f7bb3ea5bad03b170f021))
+* **grid:** suporta célula com array no filterRow ([6dd26ea](https://dev.azure.com/totvstfs/THF/_git/thf-components/commit/6dd26ea044e4d86ff548126333845d456b378ec0))
+
+
+### Bug Fixes
+
+* **grid:** ajusta filtro de coluna do tipo booleano após seleção ([81dc941](https://dev.azure.com/totvstfs/THF/_git/thf-components/commit/81dc941022bc04e87d9f1de5a58c87e1bda29525))
+* **grid:** corrige filtros ao combinar filterByRow e searchTerm ([1659a50](https://dev.azure.com/totvstfs/THF/_git/thf-components/commit/1659a50c7b869a6c5b0a0e0fd502ad9c8b2c3763))
+* **grid:** corrige scroll virtual ao aplicar filtro ([434b161](https://dev.azure.com/totvstfs/THF/_git/thf-components/commit/434b1615ec9112b93446f2fce1b0631e1c5d04b5))
+* **grid:** recalcula aggregates no filterByRow ([9c22367](https://dev.azure.com/totvstfs/THF/_git/thf-components/commit/9c223670e2c5b38a02e81dee6601563d086028ad))
 
 ## [21.31.0](https://dev.azure.com/totvstfs/THF/_git/thf-components/compare/v21.30.1...v21.31.0) (2026-09-15)
 
