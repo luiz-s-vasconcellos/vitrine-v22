@@ -2,13 +2,9 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-## [22.0.0](https://dev.azure.com/totvstfs/THF/_git/thf-components/compare/v21.30.1...v22.0.0)
+## [22.0.0-next.0](https://dev.azure.com/totvstfs/THF/_git/thf-components/compare/v21.33.0...v22.0.0-next.0) (2026-10-09)
 
 ### ⚠ BREAKING CHANGES
-
-* **angular:** deve ser utilizado o Angular v22
-
-Atualize seu projeto para utilizar a versão 22 do Angular, acesse a documentação [Guia de Atualização do Angular](https://angular.dev/update-guide) para fazer a migração completa.
 
 * **grid:** remove o método `calculateHeightDynamically`
 
@@ -50,9 +46,22 @@ Ambas eram de uso interno da biblioteca (não expostas na API pública) e foram 
 
 ### Features
 
-* **schematics:** adiciona a migração `migration-v22`
+* **angular:** atualiza projeto para o Angular 22 ([546dea1](https://dev.azure.com/totvstfs/THF/_git/thf-components/commit/546dea1ba18973a71b6ac98c5e08735d52759f86))
 
 Executada automaticamente por `ng update @totvs/thf-components@22`, a migração valida o pré-requisito do Angular 22, converte os usos de `calculateHeightDynamically` para `calculateDynamicSize('height', …)` nos arquivos `.ts` e `.html` e reporta, ao final, os casos que exigem revisão manual. As versões dos pacotes irmãos passam a ser resolvidas pelo `ng-update.packageGroup`, que agora também inclui `@totvs/themes` e `@totvs/po-theme`.
+
+### [21.34.1](https://dev.azure.com/totvstfs/THF/_git/thf-components/compare/v21.34.0...v21.34.1) (2026-10-19)
+
+
+### Bug Fixes
+
+* **grid:** corrige colunas ausentes com virtual columns ([22254d6](https://dev.azure.com/totvstfs/THF/_git/thf-components/commit/22254d6ac4e6e9083129871bb54567113be8a2fc))
+* **grid:** exporta todos os registros no pdf com virtual scroll ([c3804db](https://dev.azure.com/totvstfs/THF/_git/thf-components/commit/c3804db4fbed286d340b37a70b07dfa8d9484ab2))
+* **lookup:** compatibiliza t-key-last-search no modo single ([53159fa](https://dev.azure.com/totvstfs/THF/_git/thf-components/commit/53159fa1478713e6829ea18d6a152cb0b0d3aca5))
+
+### [21.34.0](https://dev.azure.com/totvstfs/THF/_git/thf-components/compare/v21.33.0...v21.34.0) (2026-10-14)
+
+Compatibilidade com @po-ui/ng-components@21.34.0
 
 ## [21.33.0](https://dev.azure.com/totvstfs/THF/_git/thf-components/compare/v21.32.0...v21.33.0) (2026-10-05)
 
